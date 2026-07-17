@@ -67,6 +67,90 @@
     <div class="info"><h3>Vídeo 04</h3><p>Vertical · 15s</p></div>
   </article>
 </main>
+
+<style>
+  .section{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:60px 24px}
+  .section h2{font-size:1.8rem;font-weight:800;margin-bottom:8px}
+  .section h2 span{color:var(--accent2)}
+  .section .sub{color:var(--muted);margin-bottom:30px;max-width:640px}
+  .about-wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
+  @media(max-width:760px){.about-wrap{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:28px}
+  .panel h3{font-size:1.05rem;font-weight:700;margin-bottom:14px;color:var(--accent2);text-transform:uppercase;letter-spacing:.08em;font-size:.85rem}
+  .panel p{color:#c9c9d4;line-height:1.7;font-size:.97rem}
+  .panel p + p{margin-top:12px}
+  .skills{display:flex;flex-wrap:wrap;gap:10px}
+  .skills span{background:rgba(124,92,255,.12);border:1px solid rgba(124,92,255,.35);color:#cfc3ff;border-radius:999px;padding:8px 16px;font-size:.86rem}
+  .timeline{display:grid;gap:16px;margin-top:10px}
+  .titem{background:var(--card);border:1px solid rgba(255,255,255,.06);border-left:3px solid var(--accent);border-radius:16px;padding:20px 24px}
+  .titem h4{font-size:1rem;font-weight:700}
+  .titem .meta{color:var(--accent2);font-size:.82rem;margin:4px 0 8px}
+  .titem p{color:var(--muted);font-size:.92rem;line-height:1.6}
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+  @media(max-width:600px){.edu{grid-template-columns:1fr}}
+  .edu .titem{border-left-color:var(--accent2)}
+</style>
+
+<section class="section" id="sobre">
+  <h2>Sobre <span>mim</span></h2>
+  <p class="sub">Quem é o Gabriel por trás dos vídeos.</p>
+  <div class="about-wrap">
+    <div class="panel">
+      <h3>Minha história</h3>
+      <p>Sou o Gabriel Liandro, de Joinville/SC. Venho da área técnica industrial — passei por empresas como Tupy, Döhler e Pichau — onde desenvolvi disciplina, atenção aos detalhes e visão analítica.</p>
+      <p>Hoje aplico essa base na criação de conteúdo digital: produzo vídeos verticais para TikTok, Reels e Shorts, domino ferramentas Adobe e uso inteligência artificial como aliada na produção de conteúdos que chamam atenção.</p>
+      <p>Contato: contatogabriel73@gmail.com · (47) 98483-8302</p>
+    </div>
+    <div class="panel">
+      <h3>Competências</h3>
+      <div class="skills">
+        <span>Gestão de Redes Sociais</span>
+        <span>Criação de Conteúdo</span>
+        <span>Premiere Pro</span>
+        <span>After Effects</span>
+        <span>Photoshop</span>
+        <span>Branding & Storytelling</span>
+        <span>IA aplicada ao Marketing</span>
+        <span>Espanhol intermediário</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="transicao">
+  <h2>Minha transição para o <span>Marketing Digital</span></h2>
+  <p class="sub">Da indústria para o digital: cada etapa da minha trajetória construiu a disciplina e a visão que hoje aplico na criação de conteúdo.</p>
+  <div class="timeline">
+    <div class="titem">
+      <h4>Pichau — Auxiliar de Montagem</h4>
+      <div class="meta">Outubro 2025 – Atual</div>
+      <p>Montagem e configuração de equipamentos de informática de alto desempenho, com qualidade e precisão em cada etapa.</p>
+    </div>
+    <div class="titem">
+      <h4>Döhler — Auxiliar Mecânico</h4>
+      <div class="meta">Março 2024 – Setembro 2025</div>
+      <p>Suporte na manutenção mecânica industrial em grande indústria têxtil, garantindo funcionamento contínuo e seguro dos equipamentos.</p>
+    </div>
+    <div class="titem">
+      <h4>Tupy — Jovem Aprendiz (Metalurgia)</h4>
+      <div class="meta">Março 2023 – Março 2024</div>
+      <p>Formação prática em processos metalúrgicos em uma das maiores fundições do Brasil, desenvolvendo disciplina técnica e visão industrial.</p>
+    </div>
+  </div>
+  <div class="edu">
+    <div class="titem">
+      <h4>Marketing Digital</h4>
+      <div class="meta">Universidade Uniasselvi · Em andamento</div>
+      <p>Gestão de redes sociais, produção de conteúdo e comunicação digital.</p>
+    </div>
+    <div class="titem">
+      <h4>Mídias Sociais</h4>
+      <div class="meta">EBAC · Em andamento</div>
+      <p>Estratégia e criação de conteúdo para redes sociais.</p>
+    </div>
+  </div>
+</section>
+
 <footer>Feito por <b>Gabriel Luiz Liandro</b> · contatogabriel73@gmail.com<br><a href="https://www.instagram.com/sulistaiaa/" target="_blank" rel="noopener" style="color:#7c5cff;text-decoration:none;font-weight:600;display:inline-block;margin-top:8px;">Instagram · @sulistaiaa</a></footer>
 <script>
   document.querySelectorAll('.frame').forEach(frame=>{
