@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabriel · Portfólio de Vídeos</title>
+<meta name="description" content="Portfólio de vídeos de Gabriel — conteúdo vertical para redes sociais.">
+<style>
+  :root{--bg:#0b0b0f;--card:#15151c;--text:#f2f2f5;--muted:#9a9aa8;--accent:#7c5cff;--accent2:#00d4b4;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;min-height:100vh;overflow-x:hidden;}
+  .glow{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(600px 400px at 15% -5%, rgba(124,92,255,.18), transparent 60%),radial-gradient(500px 350px at 90% 10%, rgba(0,212,180,.12), transparent 60%);}
+  header{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:72px 24px 40px;text-align:center;}
+  .badge{display:inline-block;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2);border:1px solid rgba(0,212,180,.35);border-radius:999px;padding:6px 16px;margin-bottom:20px;}
+  h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;line-height:1.1;background:linear-gradient(90deg,#fff 30%,var(--accent) 70%,var(--accent2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  header p{color:var(--muted);margin-top:14px;font-size:1.05rem;max-width:520px;margin-left:auto;margin-right:auto;}
+  .grid{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:20px 24px 80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;}
+  .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:22px;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(124,92,255,.22);border-color:rgba(124,92,255,.4);}
+  .frame{position:relative;aspect-ratio:9/16;background:#000;cursor:pointer;}
+  .frame img,.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));transition:opacity .2s;}
+  .play span{width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;transition:transform .2s, background .2s;}
+  .frame:hover .play span{transform:scale(1.12);background:rgba(124,92,255,.45)}
+  .play svg{margin-left:5px}
+  .info{padding:18px 20px 22px}
+  .info h3{font-size:1.05rem;font-weight:700}
+  .info p{color:var(--muted);font-size:.88rem;margin-top:6px}
+  footer{position:relative;z-index:1;text-align:center;color:var(--muted);font-size:.85rem;padding:30px 24px 50px;border-top:1px solid rgba(255,255,255,.06);}
+  footer b{color:var(--text)}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<header>
+  <span class="badge">Portfólio</span>
+  <h1>Gabriel Luiz Liandro</h1>
+  <p>Criador de conteúdo. Vídeos verticais para TikTok, Reels e Shorts. Confira os trabalhos mais recentes.</p>
+</header>
+<main class="grid">
+  <article class="card">
+    <div class="frame" data-src="videos/video1.mp4">
+      <img src="videos/poster1.jpg" alt="Vídeo 1" loading="lazy">
+      <div class="play"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></div>
+    </div>
+    <div class="info"><h3>Vídeo 01</h3><p>Vertical · 7s</p></div>
+  </article>
+  <article class="card">
+    <div class="frame" data-src="videos/video2.mp4">
+      <img src="videos/poster2.jpg" alt="Vídeo 2" loading="lazy">
+      <div class="play"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></div>
+    </div>
+    <div class="info"><h3>Vídeo 02</h3><p>Vertical · 15s</p></div>
+  </article>
+  <article class="card">
+    <div class="frame" data-src="videos/video3.mp4">
+      <img src="videos/poster3.jpg" alt="Vídeo 3" loading="lazy">
+      <div class="play"><span><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></div>
+    </div>
+    <div class="info"><h3>Vídeo 03</h3><p>Vertical · 10s</p></div>
+  </article>
+</main>
+<footer>Feito por <b>Gabriel Luiz Liandro</b> · contatogabriel73@gmail.com</footer>
+<script>
+  document.querySelectorAll('.frame').forEach(frame=>{
+    frame.addEventListener('click',()=>{
+      document.querySelectorAll('.frame video').forEach(v=>{v.pause();});
+      if(frame.querySelector('video')) {
+        const v=frame.querySelector('video');
+        v.paused? v.play(): v.pause();
+        return;
+      }
+      const src=frame.dataset.src;
+      const video=document.createElement('video');
+      video.src=src;video.controls=true;video.autoplay=true;video.playsInline=true;
+      frame.innerHTML='';frame.appendChild(video);
+    });
+  });
+</script>
+</body>
+</html>
